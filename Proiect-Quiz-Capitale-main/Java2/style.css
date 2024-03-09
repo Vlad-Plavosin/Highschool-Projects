@@ -1,0 +1,35 @@
+body{
+    background-image: url("poza.jpg");
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+}
+
+.answer{
+    background-color: #c27400;
+    font-size: 50px;
+    border-radius: 12px;
+    border: 4px solid #000;
+}
+
+.top{
+    text-align: center;
+    text-align: top;
+}
+.bot{
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom:10%;
+}
+#buttons{
+    width: 100%;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.answer:disabled{
+    color:#000;
+}

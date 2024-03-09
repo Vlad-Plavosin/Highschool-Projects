@@ -1,0 +1,60 @@
+﻿@model IEnumerable<WebApplication1.Models.Info>
+
+@{
+
+            }
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Clasa</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-controller="Stud" asp-action="Create" class="btn btn-primary">Adauga elev</a>
+        </div>
+    </div>
+
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style=" width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        Nume
+                    </th>
+                    <th>
+                        Prenume
+                    </th>
+                    <th>
+                        Note
+                    </th>
+                    <th>
+                        Teza
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var info in Model)
+                {
+                <tr>
+                    <td width="20%">@info.Nume</td>
+                    <td width="20%">@info.Prenume</td>
+                    <td width="20%"><span>@info.Nota1</span>   <span>@info.Nota2</span>   <span>@info.Nota3</span></td>
+                    <td width="20%">@info.Teza</td>
+                    <td width="18%">
+                        <a asp-controller="Stud" asp-action="Delete" asp-route-Id="@info.Id" class="btn btn-danger">
+                            Sterge
+                        </a>
+                        <a asp-controller="Stud" asp-action="Update" asp-route-Id="@info.Id" class="btn btn-primary">
+                            Modifica
+                        </a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Niciun Elev adaugat</p>
+    }
+</div>
